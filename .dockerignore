@@ -1,0 +1,16 @@
+backend/vendor/
+backend/node_modules/
+frontend/node_modules/
+frontend/dist/
+backend/public/build/
+backend/storage/framework/cache/*
+backend/storage/framework/sessions/*
+backend/storage/framework/views/*
+backend/storage/logs/*
+backend/database/database.sqlite
+img/
+.git/
+*.md
+fly.toml
+render.yaml
+Dockerfile

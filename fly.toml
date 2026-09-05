@@ -1,7 +1,7 @@
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = 'firas-bka-car'
+app = 'firas-bka-car-rental'
 primary_region = 'cdg'
 
 [build]
