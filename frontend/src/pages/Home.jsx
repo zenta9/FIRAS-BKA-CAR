@@ -27,7 +27,7 @@ function HomeVehicleCard({ v }) {
       className="group relative rounded-2xl overflow-hidden bg-[#111] border border-white/[0.06] hover:border-[#dc2626]/50 transition-all duration-300"
     >
       {/* Image */}
-      <div className="relative h-48 overflow-hidden">
+      <div className="relative h-64 overflow-hidden">
         {!imgLoaded && <div className="absolute inset-0 bg-white/[0.03] animate-pulse" />}
         <img
           src={imgSrc}
@@ -41,26 +41,26 @@ function HomeVehicleCard({ v }) {
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
         {/* Badge populaire */}
         {v.populaire ? (
-          <span className="absolute top-3 left-3 bg-[#dc2626] text-white text-[10px] px-2.5 py-1 rounded-full font-bold tracking-wide uppercase">
+          <span className="absolute top-4 left-4 bg-[#dc2626] text-white text-xs px-3 py-1.5 rounded-full font-bold tracking-wide uppercase">
             Populaire
           </span>
         ) : null}
         {/* Price badge */}
-        <div className="absolute bottom-3 right-3 bg-black/70 backdrop-blur-sm px-3 py-1 rounded-lg">
-          <span className="text-[#dc2626] font-bold text-sm">{v.prix_jour}</span>
-          <span className="text-white/50 text-xs ml-0.5">DH/jour</span>
+        <div className="absolute bottom-4 right-4 bg-black/70 backdrop-blur-sm px-4 py-2 rounded-xl">
+          <span className="text-[#dc2626] font-bold text-lg">{v.prix_jour}</span>
+          <span className="text-white/50 text-sm ml-1">DH/jour</span>
         </div>
       </div>
 
       {/* Content */}
-      <div className="p-4">
-        <h3 className="text-white font-semibold text-sm group-hover:text-[#dc2626] transition-colors">
+      <div className="p-5">
+        <h3 className="text-white font-bold text-lg group-hover:text-[#dc2626] transition-colors">
           {v.marque} {v.modele}
         </h3>
-        <p className="text-white/40 text-xs mt-1">
+        <p className="text-white/40 text-sm mt-1.5">
           {v.annee} • {v.transmission === 'automatique' ? 'Automatique' : 'Manuelle'} • {v.carburant} • {v.places} places
         </p>
-        <div className="mt-3 w-full py-2 rounded-lg bg-white/[0.06] text-white/60 text-xs font-medium text-center group-hover:bg-[#dc2626] group-hover:text-white transition-all duration-300">
+        <div className="mt-4 w-full py-2.5 rounded-xl bg-white/[0.06] text-white/60 text-sm font-medium text-center group-hover:bg-[#dc2626] group-hover:text-white transition-all duration-300">
           Voir le véhicule
         </div>
       </div>
@@ -357,25 +357,25 @@ export default function Home() {
 
       {/* Popular Vehicles */}
       {vehiculesPopulaires.length > 0 && (
-        <section className="py-12 px-6 md:px-12">
-          <div className="max-w-6xl mx-auto">
-            <div className="flex items-center justify-between mb-8">
+        <section className="py-16 px-6 md:px-12">
+          <div className="max-w-7xl mx-auto">
+            <div className="flex items-center justify-between mb-10">
               <div>
-                <h2 className="text-2xl sm:text-3xl font-bold text-white">Nos véhicules populaires</h2>
-                <p className="text-white/40 mt-1 text-sm">Une sélection de nos voitures les plus demandées</p>
+                <h2 className="text-3xl sm:text-4xl font-bold text-white">Nos véhicules populaires</h2>
+                <p className="text-white/40 mt-2 text-base">Une sélection de nos voitures les plus demandées</p>
               </div>
               <Link to="/vehicules" className="text-[#dc2626] font-semibold text-sm hover:underline hidden sm:block">
                 Voir toute la flotte →
               </Link>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {vehiculesPopulaires.slice(0, 4).map((v) => (
                 <HomeVehicleCard key={v.id} v={v} />
               ))}
             </div>
 
-            <Link to="/vehicules" className="sm:hidden block text-center text-[#dc2626] font-semibold text-sm mt-6 hover:underline">
+            <Link to="/vehicules" className="sm:hidden block text-center text-[#dc2626] font-semibold text-sm mt-8 hover:underline">
               Voir toute la flotte →
             </Link>
           </div>
