@@ -1,0 +1,35 @@
+# Dependencies
+node_modules/
+vendor/
+
+# Build outputs
+frontend/dist/
+backend/public/build/
+
+# Environment files
+.env
+.env.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# SQLite databases
+database/database.sqlite
+
+# Cache
+bootstrap/cache/*.php
+storage/framework/cache/*
+!storage/framework/cache/.gitignore
+
+# Compiled views
+resources/views/cache/*
